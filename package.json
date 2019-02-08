@@ -4,7 +4,7 @@
   "description": "api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ojam1/Api#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.9"
   },
   "dependencies": {
