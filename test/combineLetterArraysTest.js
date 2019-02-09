@@ -1,4 +1,5 @@
 var assert = require("chai").assert;
+var combineAllElements = require('../api/controllers/controllers').combineAllElements;
 
 describe("combines varying number of arrays", () => {
   it("combines two arrays both of length 3", () => {
@@ -208,15 +209,3 @@ describe("combines varying number of arrays", () => {
     ]);
   });
 });
-
-const combineAllElements = (...arrays) => {
-  return arrays.reduce((accumulator, currentValue) => {
-    let newArray = [];
-    accumulator.map(elementToCombine => {
-      currentValue.map(otherElementToCombine => {
-        newArray.push(elementToCombine + otherElementToCombine);
-      });
-    });
-    return newArray;
-  });
-};

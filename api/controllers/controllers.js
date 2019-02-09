@@ -6,6 +6,18 @@ exports.numberToLetters = (number) => {
   return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
 }
 
+exports.combineAllElements = (...arrays) => {
+  return arrays.reduce((accumulator, currentValue) => {
+    let newArray = [];
+    accumulator.map(elementToCombine => {
+      currentValue.map(otherElementToCombine => {
+        newArray.push(elementToCombine + otherElementToCombine);
+      });
+    });
+    return newArray;
+  });
+};
+
 const mapForNumbersToLetters = {
   "2": ["a", "b", "c"],
   "3": ["d", "e", "f"],
