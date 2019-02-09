@@ -24,6 +24,12 @@ describe("converts numbers to letters", () => {
 
     assert.deepEqual(numberToLetters(five), ["j", "k", "l"]);
   });
+
+  it("should convert 6", () => {
+    var six = "6";
+
+    assert.deepEqual(numberToLetters(six), ["m", "n", "o"]);
+  });
 });
 
 function numberToLetters(numberAsText) {
