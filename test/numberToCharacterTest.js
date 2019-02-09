@@ -61,10 +61,10 @@ describe("converts numbers to letters", () => {
 });
 
 function numberToLetters(number) {
-  return map[number] ? map[number] : "";
+  return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
 }
 
-const map = {
+const mapForNumbersToLetters = {
   "2": ["a", "b", "c"],
   "3": ["d", "e", "f"],
   "4": ["g", "h", "i"],
