@@ -22,11 +22,52 @@ describe("combines varying number of arrays", () => {
       "cf"
     ]);
   });
+
+  it("combines three arrays all of length 3", () => {
+    var array1 = ["a", "b", "c"];
+    var array2 = ["d", "e", "f"];
+    var array3 = ["g", "h", "i"];
+
+    expect(combine(array1, array2, array3)).to.deep.equalInAnyOrder([
+      "adg",
+      "adh",
+      "adi",
+      "aeg",
+      "aeh",
+      "aei",
+      "afg",
+      "afh",
+      "afi",
+      "bdg",
+      "bdh",
+      "bdi",
+      "beg",
+      "beh",
+      "bei",
+      "bfg",
+      "bfh",
+      "bfi",
+      "cdg",
+      "cdh",
+      "cdi",
+      "ceg",
+      "ceh",
+      "cei",
+      "cfg",
+      "cfh",
+      "cfi"
+    ]);
+  });
 });
 
 const combine = (...arrays) => {
-  var arr = arrays[0].map(element => element + arrays[1][0]);
-  var arr2 = arrays[0].map(element => element + arrays[1][1]);
-  var arr3 = arrays[0].map(element => element + arrays[1][2]);
-  return arr.concat(arr2, arr3);
+  return arrays.reduce((accumulator, currentValue) => {
+    let newArray = [];
+    accumulator.map(elementToCombine => {
+      currentValue.map(otherElementToCombine => {
+        newArray.push(elementToCombine + otherElementToCombine)
+        });
+      });
+      return newArray;
+   })
 };
