@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "deep-equal-in-any-order": "^1.0.10",
     "express": "^4.16.4"
   }
 }
