@@ -1,13 +1,9 @@
-exports.get_all_words = (req, res) => {
-    res.send(req.body);
+const numberToLetters = number => {
+  return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
 };
 
-exports.numberToLetters = (number) => {
-  return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
-}
-
-exports.combineAllElements = (...arrays) => {
-  return arrays.reduce((accumulator, currentValue) => {
+const combineAllElements = (...arrays) => {
+  return arrays[0].reduce((accumulator, currentValue) => {
     let newArray = [];
     accumulator.map(elementToCombine => {
       currentValue.map(otherElementToCombine => {
@@ -27,4 +23,24 @@ const mapForNumbersToLetters = {
   "7": ["p", "q", "r", "s"],
   "8": ["t", "u", "v"],
   "9": ["w", "x", "y", "z"]
+};
+
+const get_all_words = (req, res) => {
+  const numberAsStringToConvert = req.body.numbers;
+  var arrayOfLettersArray = [];
+
+  for (var i = 0; i < numberAsStringToConvert.length; i++) {
+
+    arrayOfLettersArray.push(numberToLetters(numberAsStringToConvert[i]));
+  }
+
+  var wordsArray = combineAllElements(arrayOfLettersArray);
+
+  res.send(wordsArray);
+};
+
+module.exports = {
+  numberToLetters,
+  combineAllElements,
+  get_all_words
 };

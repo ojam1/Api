@@ -6,7 +6,7 @@ describe("combines varying number of arrays", () => {
     var array1 = ["a", "b", "c"];
     var array2 = ["d", "e", "f"];
 
-    assert.deepEqual(combineAllElements(array1, array2), [
+    assert.deepEqual(combineAllElements([array1, array2]), [
       "ad",
       "ae",
       "af",
@@ -24,7 +24,7 @@ describe("combines varying number of arrays", () => {
     var array2 = ["d", "e", "f"];
     var array3 = ["g", "h", "i"];
 
-    assert.deepEqual(combineAllElements(array1, array2, array3), [
+    assert.deepEqual(combineAllElements([array1, array2, array3]), [
       "adg",
       "adh",
       "adi",
@@ -61,7 +61,7 @@ describe("combines varying number of arrays", () => {
     var array3 = ["t", "u", "v"];
     var array4 = ["w", "x", "y", "z"];
 
-    assert.deepEqual(combineAllElements(array1, array2, array3, array4), [
+    assert.deepEqual(combineAllElements([array1, array2, array3, array4]), [
       "mptw",
       "mptx",
       "mpty",
