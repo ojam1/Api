@@ -36,6 +36,12 @@ describe("converts numbers to letters", () => {
 
     assert.deepEqual(numberToLetters(seven), ["p", "q", "r", "s"]);
   });
+
+  it("should convert 8", () => {
+    var eight = "8";
+
+    assert.deepEqual(numberToLetters(eight), ["t", "u", "v"]);
+  });
 });
 
 function numberToLetters(numberAsText) {
