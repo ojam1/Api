@@ -30,6 +30,12 @@ describe("converts numbers to letters", () => {
 
     assert.deepEqual(numberToLetters(six), ["m", "n", "o"]);
   });
+
+  it("should convert 7", () => {
+    var seven = "7";
+
+    assert.deepEqual(numberToLetters(seven), ["p", "q", "r", "s"]);
+  });
 });
 
 function numberToLetters(numberAsText) {
