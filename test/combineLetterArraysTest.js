@@ -10,7 +10,7 @@ describe("combines varying number of arrays", () => {
     var array1 = ["a", "b", "c"];
     var array2 = ["d", "e", "f"];
 
-    expect(combine(array1, array2)).to.deep.equalInAnyOrder([
+    expect(combineAllElements(array1, array2)).to.deep.equalInAnyOrder([
       "ad",
       "ae",
       "af",
@@ -28,7 +28,7 @@ describe("combines varying number of arrays", () => {
     var array2 = ["d", "e", "f"];
     var array3 = ["g", "h", "i"];
 
-    expect(combine(array1, array2, array3)).to.deep.equalInAnyOrder([
+    expect(combineAllElements(array1, array2, array3)).to.deep.equalInAnyOrder([
       "adg",
       "adh",
       "adi",
@@ -60,7 +60,7 @@ describe("combines varying number of arrays", () => {
   });
 });
 
-const combine = (...arrays) => {
+const combineAllElements = (...arrays) => {
   return arrays.reduce((accumulator, currentValue) => {
     let newArray = [];
     accumulator.map(elementToCombine => {
