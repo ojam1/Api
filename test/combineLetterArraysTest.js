@@ -1,16 +1,11 @@
-const deepEqualInAnyOrder = require("deep-equal-in-any-order");
-const chai = require("chai");
-
-chai.use(deepEqualInAnyOrder);
-
-const { expect } = chai;
+var assert = require("chai").assert;
 
 describe("combines varying number of arrays", () => {
   it("combines two arrays both of length 3", () => {
     var array1 = ["a", "b", "c"];
     var array2 = ["d", "e", "f"];
 
-    expect(combineAllElements(array1, array2)).to.deep.equalInAnyOrder([
+    assert.deepEqual(combineAllElements(array1, array2), [
       "ad",
       "ae",
       "af",
@@ -28,7 +23,7 @@ describe("combines varying number of arrays", () => {
     var array2 = ["d", "e", "f"];
     var array3 = ["g", "h", "i"];
 
-    expect(combineAllElements(array1, array2, array3)).to.deep.equalInAnyOrder([
+    assert.deepEqual(combineAllElements(array1, array2, array3), [
       "adg",
       "adh",
       "adi",
@@ -65,9 +60,7 @@ describe("combines varying number of arrays", () => {
     var array3 = ["t", "u", "v"];
     var array4 = ["w", "x", "y", "z"];
 
-    expect(
-      combineAllElements(array1, array2, array3, array4)
-    ).to.deep.equalInAnyOrder([
+    assert.deepEqual(combineAllElements(array1, array2, array3, array4), [
       "mptw",
       "mptx",
       "mpty",
