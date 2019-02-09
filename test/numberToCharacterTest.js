@@ -61,10 +61,7 @@ describe("converts numbers to letters", () => {
 });
 
 function numberToLetters(number) {
-  if (!map[number])
-    return "";
-
-  return map[number];
+  return map[number] ? map[number] : "";
 }
 
 const map = {
