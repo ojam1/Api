@@ -48,10 +48,23 @@ describe("converts numbers to letters", () => {
 
     assert.deepEqual(numberToLetters(nine), ["w", "x", "y", "z"]);
   });
+
+  it("should not convert anything else", () => {
+    var zero = "0";
+    var one = "1";
+    var somethingElse = "not a number";
+
+    assert.deepEqual(numberToLetters(one), "");
+    assert.deepEqual(numberToLetters(zero), "");
+    assert.deepEqual(numberToLetters(somethingElse), "");
+  });
 });
 
-function numberToLetters(numberAsText) {
-  return map[numberAsText];
+function numberToLetters(number) {
+  if (!map[number])
+    return "";
+
+  return map[number];
 }
 
 const map = {
