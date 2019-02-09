@@ -1,4 +1,5 @@
 var assert = require("chai").assert;
+var numberToLetters = require('../api/controllers/controllers').numberToLetters;
 
 describe("converts numbers to letters", () => {
   it("should convert 2", () => {
@@ -59,18 +60,3 @@ describe("converts numbers to letters", () => {
     assert.deepEqual(numberToLetters(somethingElse), "");
   });
 });
-
-function numberToLetters(number) {
-  return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
-}
-
-const mapForNumbersToLetters = {
-  "2": ["a", "b", "c"],
-  "3": ["d", "e", "f"],
-  "4": ["g", "h", "i"],
-  "5": ["j", "k", "l"],
-  "6": ["m", "n", "o"],
-  "7": ["p", "q", "r", "s"],
-  "8": ["t", "u", "v"],
-  "9": ["w", "x", "y", "z"]
-};
