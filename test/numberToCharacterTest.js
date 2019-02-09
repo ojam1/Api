@@ -42,6 +42,12 @@ describe("converts numbers to letters", () => {
 
     assert.deepEqual(numberToLetters(eight), ["t", "u", "v"]);
   });
+
+  it("should convert 9", () => {
+    var nine = "9";
+
+    assert.deepEqual(numberToLetters(nine), ["w", "x", "y", "z"]);
+  });
 });
 
 function numberToLetters(numberAsText) {
