@@ -30,8 +30,8 @@ const get_all_words = (req, res) => {
   var arrayOfLettersArray = [];
 
   for (var i = 0; i < numberAsStringToConvert.length; i++) {
-
-    arrayOfLettersArray.push(numberToLetters(numberAsStringToConvert[i]));
+    if (numberAsStringToConvert[i].match(/[2-9]/))
+      arrayOfLettersArray.push(numberToLetters(numberAsStringToConvert[i]));
   }
 
   var wordsArray = combineAllElements(arrayOfLettersArray);
