@@ -1,3 +1,6 @@
+const checkWord = require('check-word');
+const words = checkWord('en');
+
 const numberToLetters = number => {
   return mapForNumbersToLetters[number] ? mapForNumbersToLetters[number] : "";
 };
@@ -36,7 +39,9 @@ const get_all_words = (req, res) => {
 
   var wordsArray = combineAllElements(arrayOfLettersArray);
 
-  res.send(wordsArray);
+  var actualWordsArray = wordsArray.filter(word => words.check(word));
+
+  res.send(actualWordsArray);
 };
 
 module.exports = {
