@@ -28,7 +28,7 @@ const mapForNumbersToLetters = {
   "9": ["w", "x", "y", "z"]
 };
 
-const get_all_words = (req, res) => {
+const getAllWords = (req, res) => {
   const numberAsStringToConvert = req.body.numbers;
   let arrayOfLettersArray = [];
 
@@ -47,5 +47,5 @@ const get_all_words = (req, res) => {
 module.exports = {
   numberToLetters,
   combineAllElements,
-  get_all_words
+  getAllWords
 };
