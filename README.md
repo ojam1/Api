@@ -1,13 +1,3 @@
 # Api
 
-Api was created using version 10.15.0 node and 6.5.0 npm
-
-- check your node and npm versions
-
-`node -v`
-
-`npm --v`
-
-clone the repo then run `npm install`
-
-start the server using `npm start`
+Api used in [number to word converter app](https://github.com/ojam1/NumberToWordsConverter) written using Node and Express.
