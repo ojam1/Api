@@ -1,11 +1,16 @@
 {
   "name": "api",
+  "engines": {
+    "node": "8.10.0",
+    "npm": "6.5.0"
+  },
   "version": "1.0.0",
   "description": "api",
   "main": "index.js",
   "scripts": {
     "test": "mocha -w",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "npm install"
   },
   "repository": {
     "type": "git",
