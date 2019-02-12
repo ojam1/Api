@@ -1,10 +1,10 @@
-var assert = require("chai").assert;
-var combineAllElements = require('../api/controllers/controllers').combineAllElements;
+const assert = require("chai").assert;
+const combineAllElements = require('../api/controllers/controllers').combineAllElements;
 
-describe("combines varying number of arrays", () => {
+describe("combines constying number of arrays", () => {
   it("combines two arrays both of length 3", () => {
-    var array1 = ["a", "b", "c"];
-    var array2 = ["d", "e", "f"];
+    const array1 = ["a", "b", "c"];
+    const array2 = ["d", "e", "f"];
 
     assert.deepEqual(combineAllElements([array1, array2]), [
       "ad",
@@ -20,9 +20,9 @@ describe("combines varying number of arrays", () => {
   });
 
   it("combines three arrays all of length 3", () => {
-    var array1 = ["a", "b", "c"];
-    var array2 = ["d", "e", "f"];
-    var array3 = ["g", "h", "i"];
+    const array1 = ["a", "b", "c"];
+    const array2 = ["d", "e", "f"];
+    const array3 = ["g", "h", "i"];
 
     assert.deepEqual(combineAllElements([array1, array2, array3]), [
       "adg",
@@ -56,10 +56,10 @@ describe("combines varying number of arrays", () => {
   });
 
   it("combines 4 arrays with different lengths", () => {
-    var array1 = ["m", "n", "o"];
-    var array2 = ["p", "q", "r", "s"];
-    var array3 = ["t", "u", "v"];
-    var array4 = ["w", "x", "y", "z"];
+    const array1 = ["m", "n", "o"];
+    const array2 = ["p", "q", "r", "s"];
+    const array3 = ["t", "u", "v"];
+    const array4 = ["w", "x", "y", "z"];
 
     assert.deepEqual(combineAllElements([array1, array2, array3, array4]), [
       "mptw",

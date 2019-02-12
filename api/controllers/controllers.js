@@ -30,16 +30,16 @@ const mapForNumbersToLetters = {
 
 const get_all_words = (req, res) => {
   const numberAsStringToConvert = req.body.numbers;
-  var arrayOfLettersArray = [];
+  let arrayOfLettersArray = [];
 
-  for (var i = 0; i < numberAsStringToConvert.length; i++) {
+  for (let i = 0; i < numberAsStringToConvert.length; i++) {
     if (numberAsStringToConvert[i].match(/[2-9]/))
       arrayOfLettersArray.push(numberToLetters(numberAsStringToConvert[i]));
   }
 
-  var wordsArray = combineAllElements(arrayOfLettersArray);
+  let wordsArray = combineAllElements(arrayOfLettersArray);
 
-  var actualWordsArray = wordsArray.filter(word => words.check(word));
+  const actualWordsArray = wordsArray.filter(word => words.check(word));
 
   res.send(actualWordsArray);
 };
